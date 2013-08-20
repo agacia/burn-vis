@@ -1,0 +1,14 @@
+extends layout
+
+block content
+	h1= title
+	p VANETS #{title}
+	block vanets_block
+		#vanets
+		#vis_vanets
+
+block nav
+	li 		
+		a(href="/") home	
+	li 
+		a(href="vanets/") vanets	      

@@ -1,0 +1,35 @@
+{
+  "width": 750,
+  "height": 150,
+  "padding": {"top": 10, "left": 30, "bottom": 20, "right": 10},
+  "data": [
+    {
+      "name": "route",
+      "values": []
+    }
+  ],
+  "scales": [
+    {"name":"x", "range":"width", "domain":{"data":"route", "field":"data.offset"}},
+    {"name":"y", "range":"height", "nice":true, "domain":{"data":"route", "field":"data.performance.speed"}}
+  ],
+  "axes": [
+    {"type":"x", "scale":"x", "ticks":20},
+    {"type":"y", "scale":"y"}
+  ],
+  "marks": [
+    {
+      "type": "line",
+      "from": {"data":"route"},
+      "properties": {
+        "enter": {
+          "x": {"scale":"x", "field":"data.offset"},
+          "strokeWidth": {"value": 2},
+          "stroke": {"value": "red"},
+          "y": {"scale":"y", "field":"data.performance.speed"}
+        },
+        "update": { "stroke": {"value":"red"} },
+        "hover": { "stroke": {"value":"steelblue"} }
+      }
+    }
+  ]
+}

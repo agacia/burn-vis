@@ -1,0 +1,65 @@
+body, html {
+    height: 100%;
+    overflow: hidden;
+}
+
+.scrollable 
+{
+    height: 100%;
+    overflow: auto;
+}
+
+.map { 
+	height: 500px; 
+	width: 100%;
+}
+
+path {
+  stroke-width: 3px;
+  stroke: #19B8FF;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+#slider, .slider {
+width: 100%
+}
+
+#datepicker {
+width: 100%;
+}
+
+#footer {
+clear: both;
+position: absolute;
+
+}
+
+#lala {
+display: block;
+height: 500px;
+width: 200px;
+background-color: #ccc;
+}
+
+#bee {
+clear: both;
+height: 1200px;
+width: 200px;
+background-color: #ddd;
+display: block;
+}
+
+div.tooltip {   
+  position: absolute;           
+  text-align: center;           
+  width: 60px;                  
+  height: 28px;                 
+  padding: 2px;             
+  font: 12px sans-serif;        
+  background: lightsteelblue;   
+  border: 0px;      
+  border-radius: 8px;           
+  pointer-events: none;         
+}
+
