@@ -1,14 +1,18 @@
 extends layout
 
+
+block navigation
+	li(class="") 
+		a(href="/") home	
+	li(class="") 
+		a(href="/burn") burn
+	li(class="active")
+		a(href="/vanets") vanets		
+
+
+
 block content
-	h1= title
-	p VANETS #{title}
+	h3= title
 	block vanets_block
 		#vanets
 		#vis_vanets
-
-block nav
-	li 		
-		a(href="/") home	
-	li 
-		a(href="vanets/") vanets	      

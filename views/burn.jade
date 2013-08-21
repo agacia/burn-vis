@@ -1,0 +1,41 @@
+extends layout
+
+block navigation
+	li
+		a(href="/") BURN BABY BURN	
+	li
+		a(href="/trace") your trace	
+	li.active
+		a(href="/burn") the world
+
+
+block content
+	h2= title
+	div
+		div#map
+			<canvas id="c"></canvas>
+	div#notice
+
+block scripts
+	script(type='text/javascript', src='javascripts/modestmaps.min.js');
+	script(type='text/javascript', src='javascripts/gl-boiler-plate.js');
+	script(type='text/javascript', src='javascripts/image-queue.js');
+	script(type='text/javascript', src='javascripts/bg.js');
+	
+	script(type='text/javascript', src='javascripts/burningMap.js');
+	script#shader-vs(type="x-shader/x-vertex")
+		include webgl/frag1.frag
+	script#shader-fs(type="x-shader/x-fragment")
+		include webgl/frag2.frag
+	script#shader-vs-px(type="x-shader/x-vertex")
+		include webgl/frag3.frag
+	script#shader-fs-px(type="x-shader/x-fragment")
+		include webgl/frag4.frag
+	script(type='text/javascript')
+		var notice = document.getElementById("notice");
+		if (navigator.userAgent.match(/Chrome/i)) {
+			notice.html = "Burn baby!";
+			burnBabyBurn();
+		} else {
+			notice.html = "Burn baby!";"Are you sure? This may crash your browser or slow your computer to the point of unusability.";
+		}

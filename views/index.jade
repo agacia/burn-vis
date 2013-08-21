@@ -1,11 +1,12 @@
 extends layout
 
-block content
-	h1= title
-	p Welcome to #{title}
+block navigation
+	li.active
+		a(href="/") BURN BABY BURN	
+	li
+		a(href="/trace") your trace	
+	li
+		a(href="/burn") the world
 
-block nav
-	li 
-		a(href="/") home	
-	li 
-		a(href="vanets/") vanets	
+block content
+	

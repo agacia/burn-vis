@@ -1,0 +1,18 @@
+extends layout
+
+block navigation
+	li
+		a(href="/") BURN BABY BURN	
+	li.active
+		a(href="/trace") your trace	
+	li
+		a(href="/burn") the world
+
+block content
+	h2= title
+	div
+		div#tracemap
+
+
+block scripts
+	script(type='text/javascript', src='javascripts/traceMap.js');

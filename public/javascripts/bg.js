@@ -89,7 +89,7 @@ function backgroundGL(tiles, entering, exiting)
         blank = new Image();
         
     blank.src = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEAAQMAAABmvDolAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAANQTFRFZmZmfFaCBAAAAB9JREFUGBntwQENAAAAwqD3T20ON6AAAAAAAAAAAL4NIQAAAQWThvcAAAAASUVORK5CYII=';
-    blank.src = 'images/blank.png';
+    // blank.src = 'images/blank.png';
 
     setInterval(function() { queue.process() }, 250);
     
@@ -152,7 +152,7 @@ function backgroundGL(tiles, entering, exiting)
         tile_textures[key].loaded = false;
         gl.activeTexture(texture_targets[r]);
         // console.log("gl.TEXTURE_2D, 0, s*txsz, t*txsz, gl.RGBA, gl.UNSIGNED_BYTE, blank:")
-        console.log(gl.TEXTURE_2D, 0, s*txsz, t*txsz, gl.RGBA, gl.UNSIGNED_BYTE, blank)
+        // console.log(gl.TEXTURE_2D, 0, s*txsz, t*txsz, gl.RGBA, gl.UNSIGNED_BYTE, blank)
         gl.texSubImage2D(gl.TEXTURE_2D, 0, s*txsz, t*txsz, gl.RGBA, gl.UNSIGNED_BYTE, blank);
         queue.add(src, onload);
         

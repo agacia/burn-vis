@@ -4,5 +4,5 @@
  */
 
 exports.index = function(req, res){
-  res.render('vanets', { title: 'VANETs' });
+  res.render('trace', { title: 'BURN YOUR TRACE' });
 };

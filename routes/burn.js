@@ -4,5 +4,5 @@
  */
 
 exports.index = function(req, res){
-  res.render('vanets', { title: 'VANETs' });
+  res.render('burn', { title: 'BURN THE WORLD' });
 };

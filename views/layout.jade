@@ -9,7 +9,20 @@ html
 	meta(http-equiv="content-type", name="viewport", content="#{contentType}", charset="UTF-8")
 
 	body
-		ul#books
-			block nav		
-		
-		block content
+		div(class="row-fluid navbar navbar-default")
+			ul(class="nav navbar-nav", role="navigation")
+				block navigation
+
+		div.row-fuild					
+			block content
+
+
+	script(type='text/javascript', src='javascripts/jquery-1.10.2.min.js');
+	script(type='text/javascript', src='javascripts/leaflet.js');
+	script(type='text/javascript', src='javascripts/index.js');
+	script(type='text/javascript', src='javascripts/d3.v3.min.js');
+	script(type='text/javascript', src='javascripts/tile.stamen.js');
+	script(type='text/javascript', src='/bootstrap/js/bootstrap.min.js')
+	script(type='text/javascript', src='/bootstrap/js/bootstrap-slider.js')
+	script(type='text/javascript', src='/bootstrap/js/bootstrap-datepicker.js')
+	block scripts

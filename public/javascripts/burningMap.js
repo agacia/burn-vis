@@ -4,10 +4,6 @@ function burnBabyBurn() {
     var width = doc.clientWidth, height = doc.clientHeight;
 
     var c = document.getElementById("c");
-    if (!c) {
-        return;
-    }
-
     c.width = width, c.height = height;
     grid_stat = Grid('#map',width,height);
     redraw = foregroundGL(grid_stat.coords, grid_stat.entering, grid_stat.exiting);
@@ -104,9 +100,7 @@ function foregroundGL(tiles, entering, exiting)
     var queue = ImageQueue(),
         blank = new Image();
         
-    blank.src = 'blank.png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEAAQMAAABmvDolAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAANQTFRFZmZmfFaCBAAAAB9JREFUGBntwQENAAAAwqD3T20ON6AAAAAAAAAAAL4NIQAAAQWThvcAAAAASUVORK5CYII=';
-    blank.src = 'images/blank.png';
-
+    blank.src = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEAAQMAAABmvDolAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAANQTFRFZmZmfFaCBAAAAB9JREFUGBntwQENAAAAwqD3T20ON6AAAAAAAAAAAL4NIQAAAQWThvcAAAAASUVORK5CYII=';
     setInterval(function() { queue.process() }, 250);
     
     function tileKey(tile)
@@ -433,11 +427,14 @@ var modestParent, modestMap;
 
 function Grid(parent, gridWidth, gridHeight)
 {
-    modestParent = d3.select(parent);
-    modestParent.append("div")[0][0];
+    zoom = 2;
+    column = 328;
+    row = 791.5;
+    modestParent = d3.select(parent).append("div")[0][0];
     modestMap = new MM.Map(modestParent, new MM.TemplatedLayer("http://tile.stamen.com/toner/{Z}/{X}/{Y}.png"));
-    // modestMap = new L.Map("map");
+    // modestMap.setCenterZoom(new MM.Location(40.4549295, -119.4194155), 2.5);
     modestParent.id = "parentDiv";
+
     modestMap.setSize(new MM.Point(gridWidth, gridHeight));
 
     function coordinateLocation(c) {
@@ -461,9 +458,11 @@ function Grid(parent, gridWidth, gridHeight)
             zoom = parseFloat(pos.shift()),
             center = new MM.Location(parseFloat(pos[0]), parseFloat(pos[1]));
         coord = locationCoordinate(center, zoom);
-        // console.log("location.hash:", location.hash, zoom, center, "->", coord);
+        console.log("location.hash:", location.hash, zoom, center, "->", coord);
     } else {
-        coord = {c: 328, r: 791.5, z: 11};
+        center = new MM.Location(34.874, -108.165);
+        zoom = 6
+        coord = locationCoordinate(center, zoom);
     }
 
 

@@ -6,6 +6,8 @@
 var express = require('express');
 var routes = require('./routes');
 var user = require('./routes/user');
+var burn = require('./routes/burn');
+var trace = require('./routes/trace');
 var vanets = require('./routes/vanets');
 var http = require('http');
 var path = require('path');
@@ -33,6 +35,8 @@ if ('development' == app.get('env')) {
 
 app.get('/', routes.index);
 app.get('/users', user.list);
+app.get('/burn', burn.index);
+app.get('/trace', trace.index);
 app.get('/vanets', vanets.index);
 
 http.createServer(app).listen(app.get('port'), function(){
