@@ -5,6 +5,7 @@ html
 	link(rel='stylesheet', href='/stylesheets/style.css')
 	link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
 	link(rel='stylesheet', href='/bootstrap/css/bootstrap-responsive.min.css')
+	block css
 	- var contentType = "width=device-width, initial-scale=1.0"
 	meta(http-equiv="content-type", name="viewport", content="#{contentType}", charset="UTF-8")
 
@@ -25,4 +26,5 @@ html
 	script(type='text/javascript', src='/bootstrap/js/bootstrap.min.js')
 	script(type='text/javascript', src='/bootstrap/js/bootstrap-slider.js')
 	script(type='text/javascript', src='/bootstrap/js/bootstrap-datepicker.js')
+	
 	block scripts

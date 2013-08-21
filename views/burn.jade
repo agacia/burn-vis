@@ -1,5 +1,9 @@
 extends layout
 
+block css
+	link(rel='stylesheet', href='/stylesheets/burn_style.css')
+	link(rel='stylesheet', href='/stylesheets/layer.css')
+
 block navigation
 	li
 		a(href="/") BURN BABY BURN	
@@ -21,7 +25,6 @@ block scripts
 	script(type='text/javascript', src='javascripts/gl-boiler-plate.js');
 	script(type='text/javascript', src='javascripts/image-queue.js');
 	script(type='text/javascript', src='javascripts/bg.js');
-	
 	script(type='text/javascript', src='javascripts/burningMap.js');
 	script#shader-vs(type="x-shader/x-vertex")
 		include webgl/frag1.frag

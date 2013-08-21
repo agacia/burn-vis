@@ -1,0 +1,41 @@
+
+#tracemapcontainer {
+	width: 100%;
+	height: 700px;
+}
+
+#tracemap {
+	width: 100%;
+	height: 100%;
+}
+
+#brc {
+	color: blue;
+	z-index: 100;
+}
+
+path {
+  stroke-width: 4px;
+  fill: None;
+  stroke: #FF530D;
+  background-image: url('../images/fire.jpg');
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+#burnBtn {
+margin: 10px;
+background-color:  #FF530D;
+}
+
+span ,
+input {
+margin: 10px;
+font-size: 16px;
+}
+
+#svg_img {
+background-image: url('../images/fire.jpg');
+
+}
+

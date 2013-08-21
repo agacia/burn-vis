@@ -1,5 +1,10 @@
 extends layout
 
+block css
+	link(rel='stylesheet', href='/stylesheets/leaflet.css')
+	link(rel='stylesheet', href='/stylesheets/leaflet.ie.css')
+	link(rel='stylesheet', href='/stylesheets/trace_style.css')
+
 block navigation
 	li
 		a(href="/") BURN BABY BURN	
@@ -10,9 +15,17 @@ block navigation
 
 block content
 	h2= title
-	div
-		div#tracemap
+		span Name
+			input(id='name',type='text')
+		span From
+			input(id='address',type='text')
+		button(id='burnBtn', class='btn') Burn
+
+	div.row-fluid
+		div#tracemapcontainer
+			div#tracemap
 
 
 block scripts
 	script(type='text/javascript', src='javascripts/traceMap.js');
+	script(src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false")
